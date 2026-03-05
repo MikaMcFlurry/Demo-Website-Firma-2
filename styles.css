@@ -294,6 +294,11 @@ a:hover { text-decoration: underline; }
 /* --- Plant cards --- */
 .plant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 .plant-card {
+  /* Explicit white bg + text reset so the card is always readable,
+     even when placed inside a section--dark (e.g. index.html plants strip).
+     Without this, the card body is transparent → dark text on dark bg = invisible. */
+  background: var(--clr-white);
+  color: var(--clr-text);
   border: 1px solid var(--clr-border); border-radius: var(--radius);
   overflow: hidden; box-shadow: var(--shadow);
 }
